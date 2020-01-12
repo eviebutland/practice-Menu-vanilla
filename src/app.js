@@ -5,6 +5,8 @@ const dropdownContainer1 = document.getElementById('dropdown-1')
 const dropdownContainer2 = document.getElementById('dropdown-2')
 const dropdownContainer3 = document.getElementById('dropdown-3')
 const dropdownContainers = document.querySelectorAll('.navbar__container')
+const burgerButton = document.querySelector('.navbar__header__button--burger')
+
 
 simpleLink.forEach( link => link.addEventListener('click', function (){
     pageTitle.innerText = link.innerText
@@ -41,3 +43,16 @@ dropdownLinks.forEach( link => link.addEventListener('mouseover', function(){
 dropdownContainers.forEach( container => container.addEventListener('mouseleave', function(){
     container.style.display = 'none';
 }))
+
+let burgerIsOpen = false
+
+burgerButton.addEventListener('click', function(){
+            
+    if(burgerIsOpen === false){
+        burgerButton.innerHTML = '<img src="./assets/bars-solid.svg"/>'
+        burgerIsOpen = true
+    } else {
+        burgerButton.innerHTML = '<img src="./assets/times-solid.svg"/>'
+        burgerIsOpen = false
+    }
+})
