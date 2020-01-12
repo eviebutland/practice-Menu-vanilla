@@ -110,7 +110,7 @@ body {
 
                     & a {
                         text-decoration: none;
-                        color: black
+                        // color: black
                     }
 
                     &:hover {
@@ -119,6 +119,19 @@ body {
                     &:last-child {
                         border-bottom: none;
                     }
+                }
+            }
+        }
+        &__link {
+            &--green {
+                & a {
+                    color: green;
+                    font-weight: bold;
+                }
+            }
+            &--normal {
+                & a {
+                    color: black
                 }
             }
         }

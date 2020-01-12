@@ -1,18 +1,42 @@
 const simpleLink = document.querySelectorAll('.simple-link')
 const pageTitle = document.querySelector('.page-title')
-const dropdownLink1 = document.getElementById('')
-const dropdownLink2 = document.
-const dropdownLink3 = document.
+const dropdownLinks = document.querySelectorAll('.main-nav')
 const dropdownContainer1 = document.getElementById('dropdown-1')
+const dropdownContainer2 = document.getElementById('dropdown-2')
+const dropdownContainer3 = document.getElementById('dropdown-3')
 const dropdownContainers = document.querySelectorAll('.navbar__container')
 
 simpleLink.forEach( link => link.addEventListener('click', function (){
     pageTitle.innerText = link.innerText
 }))
 
-// dropdownLink.forEach( link => link.addEventListener('mouseover', function(){
-//     dropdownContainer1.style.display = 'grid';
-// }))
+dropdownLinks.forEach( link => link.addEventListener('mouseover', function(){
+    const dataType = link.getAttribute('data-link')
+
+    switch(dataType){
+        case 'dropdown-1':
+            dropdownContainer1.style.display = 'grid'
+            dropdownContainer2.style.display = 'none'
+            dropdownContainer3.style.display = 'none'
+            break;
+        case 'dropdown-2':
+            dropdownContainer1.style.display = 'none'
+            dropdownContainer2.style.display = 'grid'
+            dropdownContainer3.style.display = 'none'
+
+            break;  
+        case 'dropdown-3':
+            dropdownContainer1.style.display = 'none'
+            dropdownContainer2.style.display = 'none'
+            dropdownContainer3.style.display = 'grid'
+            break;
+        case 'simple-link':
+            dropdownContainer1.style.display = 'none'
+            dropdownContainer2.style.display = 'none'
+            dropdownContainer3.style.display = 'none'
+            break
+    }
+}))
 
 dropdownContainers.forEach( container => container.addEventListener('mouseleave', function(){
     container.style.display = 'none';
