@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.navbar{
+    &__header{
+        border-bottom: 1px solid grey;
+
+        &--mobile{
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr
+        }
+        &__button {
+            &--burger {
+                width: 100%;
+                text-align: left;
+                & img {
+                    width: 30px;
+                }
+            }
+            &--home {
+               background-color: transparent;
+               border: 0; 
+            }
+        }
+        &--desktop {
+            display: none;
+        }
+
+    }
+}
+@media screen and (min-width: 760px){
+    .navbar{
+
+        &__header{
+    
+            &--mobile{
+                display: none;
+            }
+            &--desktop{
+                display: grid;
+                grid-template-columns: 1fr 5fr;
+            }
+            &--divider {
+                display: grid;
+            }
+        }
+        
+        &__top-nav {
+            padding: 0;
+            margin: 0;
+            text-align: right;
+
+            & li {
+                display: inline-block;
+                list-style: none;
+                border-right: 1px solid grey;
+                margin: 10px 0;
+                padding: 0 10px;
+
+                & a {
+                    color: black;
+                    text-decoration: none;
+                }
+                &:last-child{
+                    border-right: 0;
+                }
+            }
+        }
+        &__main-nav {
+            padding: 0;
+            margin: 0;
+
+            & li {
+                display: inline-block;
+                list-style: none;
+                padding: 0 10px 10px 0;
+                margin: 10px 10px 0 10px;
+                border-bottom: 5px solid transparent;
+
+
+                & a {
+                    display: flex;
+                    text-decoration: none;
+                    color: black;
+
+                    & img {
+                        width: 10px;
+                        padding-left: 5px;
+                    }
+                }
+                &:hover {
+                    border-bottom: 5px solid green;
+                }
+            }
+        }
+        &__container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            column-gap: 5%;
+            margin: 0 5%;
+            border-bottom: 1px solid grey;
+
+
+            &__col {
+                & li {
+                    list-style: none;
+                    border-bottom: 1px solid grey;
+                    padding: 20px 0;
+
+                    & a {
+                        text-decoration: none;
+                        color: black
+                    }
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+    }
+}
+#dropdown-1, 
+#dropdown-2,
+#dropdown-3 {
+    display: none;
+}
